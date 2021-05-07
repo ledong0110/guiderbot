@@ -1,0 +1,77 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - thank
+  - ask_function
+  - find_path
+  - ask_name
+  - given_name
+  - bot_challenge
+  - grossip
+  - unclear
+  - dev
+  # - hello_world
+entities:
+  - name
+  - location
+  - departure
+
+slots:
+  name:
+    type: text
+    auto_fill: true
+  location:
+    type: text
+    auto_fill: true
+  departure:
+    type: text
+    auto_fill: true
+
+responses:
+  utter_greet:
+  - text: "Xin chao ban, không biết mình có thể gọi bạn như thế nào ?"
+  - text: "Xin chào, chúc bạn có một ngày tốt lành, mình có thể gọi bạn như thế nào ?"
+
+  utter_goodbye:
+  - text: "Tạm biệt bạn"
+  - text: "Bye bạn =)"
+  - text: "Tam biệt, rất vui được gặp bạn =)"
+  - text: "Mong sớm được gặp lại bạn !"
+
+  utter_ask_name:
+  - text: "Mình tên là Guider, hihi"
+
+  utter_given_name:
+  - text: "Chào bạn {name}, mình có thể giúp gì cho bạn"
+
+  # utter_find_path:
+  # - text: "{name} oi!, Day la duong den ban can tim:\nhttps://www.google.com/maps/dir/?api=1&destination={location}"
+     
+  utter_ask_function:
+  - text: "Mình có thể chỉ đường và giúp bạn tra cứu thông tin của địa điểm"
+
+  utter_thank:
+  - text: "Đó là nhiệm vụ của mình mà, cảm ơn bạn rất nhiều =)"
+  - text: "Mình rất vui khi có thể giúp ích cho bạn"
+
+  utter_iamabot:
+  - text: "Vâng mình là bot chat, rất vui có thể giúp đỡ bạn"
+
+  utter_grossip:
+  - text: "Xin lỗi vì mình chưa thể đáp ứng được hết mong đợi của bạn" 
+
+  utter_unclear:
+  - text: Mình chưa hiểu ý của bạn
+ 
+  utter_dev:
+  - text: Đây là nhà phát triển của mình, tên Đồng Lê !!!!!
+    # image: https://d038e9f6b7e7.ngrok.io/ToDrawMap/dong.jpg
+    image: https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.15752-9/180573368_167945348461108_3043654806821572700_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=ae9488&_nc_ohc=OV2WuQgBRLgAX-zlc4z&_nc_oc=AQndUIoPnPEzPmzEECl8Ug0Vs04LfNuzg2UeQQjVlrMQ3v2PWnXXYxpIZE6tftKhKPnPNCVNDb6gwjrNKkspGMeQ&_nc_ht=scontent.fsgn5-2.fna&oh=a21cf4bd8c32d90702dc3b3e18068034&oe=60B1A499
+actions: 
+  - action_find_path
+
+session_config:
+  session_expiration_time: 15
+  carry_over_slots_to_new_session: true

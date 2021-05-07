@@ -1,0 +1,403 @@
+version: "2.0"
+
+nlu:
+- intent: dev
+  examples: |
+    - nhà phát triển của bạn là ai
+    - dev của bạn là ai
+    - dev bạn tên gì
+    - tên của người làm ra bạn
+    - người tạo ra ban tên gì 
+    - nhà phát triển của bạn tên gì
+    - ai là nhà phát triển của bạn 
+    - ai tạo ra bạn
+    - bạn được ai tạo ra
+    - người tạo ra bạn là ai 
+    - bạn được tạo ra bởi ai
+    - ai làm ra bạn 
+    - bạn được làm ra bởi ai
+    - ban được ai làm ra
+    - ban duoc ai lam ra
+    - ai lam ra ban
+    - ai tao ra ban
+    - nguoi tao ra ban la ai
+    - ai la nha phat trien cua ban
+    - nha phat trien cua ban la ai
+    - ban duoc lam ra boi ai
+    - ban duoc tao ra boi ai
+    - dev cua ban ten gi
+    - nguoi lam ra ban ten gi
+    - ten nguoi lam ra ban
+    
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - chao
+    - xin chao
+    - chao buoi sang
+    - chao buoi trua
+    - chao buoi chieu
+    - ban khoe khong
+    - chao nhe
+    - chao anh
+    - chao chi
+    - chao ban
+    - chao em
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - bye
+    - tam biet
+    - bye bye
+    - hen gap lai
+    - lan sau gap lai
+    - tam biet ban
+    - tam biet em
+    - bye nha
+    - tam biet anh
+    - tam biet chi
+
+- intent: find_path
+  examples: |
+    - Toi can tim den [A4]{"entity": "location"}
+    - Toi muon tim den [vườn ươm doanh nghiệp]{"entity": "location"}
+    - Toi di [B3]{"entity": "location"}
+    - Toi di [Da lat]{"entity": "location"}
+    - [B6]{"entity": "location"} nam o dau
+    - Tui muon di [Dai hoc Bach Khoa TPHCM]{"entity": "location"}
+    - Toi can tim [Dai hoc Y]{"entity": "location"} 
+    - [Hoi truong thanh pho]{"entity": "location"} nam o dau
+    - Toi can den [Pho di bo Nguyen Hue]{"entity": "location"}
+    - [Nha hat quan doi]{"entity": "location"} o dau 
+    - Lam sao de den [vien bao tang]{"entity": "location"}
+    - tui can den [nha tho duc ba]{"entity": "location"}
+    - [san van dong]{"entity": "location"} nam o dau
+    - anh muon den [rap phim CGV]{"entity": "location"}
+    - chi muon di [Da Lat]{"entity": "location"}
+    - tao muon den [binh duong]{"entity": "location"}
+    - cho em hoi [nha thi dau nam o dau]{"entity": "location"}
+    - em can tim [Khu Giai tri]{"entity": "location"}
+    - [nha thieu nhi]{"entity": "location"} o dau vay
+    - toa [B4]{"entity": "location"} nam o dau day
+    - cho anh hoi [chung cu Vinhome]{"entity": "location"} o dau vay
+    - bo may can den [khach san]{"entity": "location"}
+    - cho bo may hoi la [khu do thi sala] o dau vay
+    - cho minh hoi [nha cau long]{"entity": "location"} o dau
+    - chi can den [benh vien hung vuong]{"entity": "location"}
+    - anh can den [cong ty tnh mtv hoa phat]
+    - tui dang muon den [Nha hat Cao Van Lau]{"entity": "location"}
+    - minh dang can den [Cong TY ONG THEP HOA SEN]{"entity": "location"}
+    - [NHA MAY KIM LOAI]{"entity": "location"} nam o dau
+    - ANH MUON DEN [NHA THI DAU QUAN 10]{"entity": "location"}
+    - CHI CAN DEN [RAP PHIM Q6]{"entity": "location"}
+    - tui dang can den [bao tang chien tranh quan 1]{"entity": "location"}
+    - em co viec den [khu bao tang Mi thuat tphcm q3]{"entity": "location"}
+    - chị muốn đi từ [A4]{"entity": "departure"} đến [A3]{"entity": "location"}
+    - anh muốn đi từ [B3]{"entity": "departure"} đến [B10]{"entity": "location"}
+    - em muốn đi từ [202a4]{"entity": "departure"} đến [b9]{"entity": "location"}
+    - chị muốn đi từ [a3]{"entity": "departure"} đến [c6]{"entity": "location"}
+    - làm sao để đi từ [a4]{"entity": "departure"} đến [303B3]{"entity": "location"}
+    - tìm đường đi từ [B3]{"entity": "departure"} đến [a2]{"entity": "location"}
+    - tui muốn đi từ [Cong Ly Thuong Kiet]{"entity": "departure"} đến [Phong hoc vu]{"entity": "location"}
+    - làm sao để đi từ [Bai giu xe]{"entity": "departure"} tới [Hoi truong B4]{"entity": "location"}
+    - cách nào để đi từ [văn phòng khoa A3]{"entity": "departure"} đến [khu thể dục]{"entity": "location"}
+    - Anh muốn đi từ [405A2]{"entity": "departure"} đến [PTN]{"entity": "location"}
+    - chị cần tìm đường đi từ [A5]{"entity": "departure"} đến [b8]{"entity": "location"}
+    - toi can tim duong di tu [A4]{"entity": "departure"} toi [A6]{"entity": "location"}
+    - anh can di tu [202a3]{"entity": "departure"} den [hoi truong B4]{"entity": "location"}
+    - chị muốn đi đến [A3]{"entity": "location"}
+    - anh cần tìm [văn phòng đoàn]{"entity": "location"}
+    - làm sao để đến [hội trường a5]{"entity": "location"}
+    - cách để tới phòng thí nghiêm [202C5]{"entity": "location"}
+    - tôi cần tìm đến [thu vien A2]{"entity": "location"}
+    - em cần tìm đường đến [văn phòng đào tạo quốc tế a4]{"entity": "location"}
+    - đường đi tới [B5]{"entity": "location"}
+    - làm sao tới [Tiệm tạp hóa]{"entity": "location"}
+    - đường tới [nhà hội trường A5]{"entity": "location"}
+    - anh cần đi từ hội trường [B2]{"entity": "departure"} đến [bãi xe lý thường kiệt]{"entity": "location"}
+- intent: given_name
+  examples: |
+    - Anh ten la [Dong]{"entity": "name"}
+    - Chi ten [Huong]{"entity": "name"}
+    - Em ten [Linh]{"entity": "name"}
+    - [Hung]{"entity": "name"} la ten tui
+    - [Khai]{"entity": "name"} la cai ten cua toi
+    - Toi co ten la [Khang]{"entity": "name"}
+    - Toi la [Dung]{"entity": "name"}
+    - Toi ten [Le Duc Dong]{"entity": "name"}
+    - Toi la [tran thi kim xuyen]{"entity": "name"}
+    - [Tran duc Bo]{"entity": "name"} la ten cua toi
+    - toi ten la [Khang Nguyen]{"entity": "name"}
+    - tui la [Duc]{"entity": "name"}
+    - ten tui la [Phat]{"entity": "name"}
+    - ten anh la [Kim]{"entity": "name"}
+    - em ten la [Huy]{"entity": "name"}
+    - chi ten la [Thuy]{"entity": "name"}
+    - Ten cua chi la [Vy]{"entity": "name"}
+    - Ho ten cua anh la [Nguyen Trung Thanh]{"entity": "name"}
+    - Chi co ho ten la [Phan Duong Qua]{"entity": "name"}
+    - em ten la [Khoa]{"entity": "name"}
+    - ho ten em la [Nguyen Anh Dung]{"entity": "name"}
+    - bo may ten la [le tien anh]{"entity": "name"}
+    - tui ten [ho anh khoa]{"entity": "name"}
+    - [kinh kong]{"entity": "name"} la ten bo may
+    - tao ten [An nguyen Duong]{"entity": "name"}
+    - anh ten la [Van Trang nguyen]{"entity": "name"}
+    - [Thien]{"entity": "name"} la ten bo may
+    - [tuan]{"entity": "name"} la ten cua t
+    - t ten [An]{"entity": "name"}
+    - em ten la [BAO VY]{"entity": "name"}
+    - t ten la [thien quang]{"entity": "name"}
+    - ban co the goi minh la [Duc Dong]{"entity": "name"}
+    - em co the goi anh la [Tuan dung]{"entity": "name"}
+    - em goi chi la [nhat lam]{"entity": "name"} nhe
+    - ban co the goi minh la [duc]{"entity": "name"} 
+    - ban co the goi minh la [Hung]{"entity": "name"}
+    - ban co the goi minh la [Hung Nguyen le duong Ngoc]{"entity": "name"}
+    - em co the keu anh la [tran nguyen tuan phat]{"entity": "name"}
+    - em co the keu anh la [Duong Loi Tai Thien]{"entity": "name"}
+    - EM TEN LA [TUAN ANH]{"entity": "name"}
+    - Chào bạn! Mình tên [Yamada]{"entity": "name"}
+    - anh tên là [Khoa]{"entity": "name"}
+    - tao tên [Khánh Lê]{"entity": "name"}
+    - tên của tao Luan Thành Kien]{"entity": "name"}
+    - chij tên là [Vy]{"entity": "name"}
+    - tui tên là [ĐỨc Nguyễn]{"entity": "name"}
+    - tên của tao là [Nguyễn Tran duong An]{"entity": "name"}
+    - tên cảu bố mày là [Khnah Trfjkd]{"entity": "name"}
+    - bố mày tên là [Đồng đẹp trai] {"entity": "name"}
+    - Anh tên là [Hoài Đức]{"entity": "name"}
+    - [Khoa Nguyẽen Anh]{"entity": "name"} là tên của anh
+    - Tôi có tên là [Khang]{"entity": "name"}
+    - [ĐỨc Nguyễn]{"entity": "name"}
+    - [Việt]{"entity": "name"}
+    - [Bùi Thị Xuân]{"entity": "name"}
+    - tên của em là [Nguyễn Trần Trung Thành]{"entity": "name"}
+    - em có tên là [khánh vy]{"entity": "name"}
+    - em tên là [Phuong Dung]{"entity": "name"}
+    - [LE DUC]{"entity": "name"} là tên emmmm
+    - bạn có thể gọi tui là [Khanh Anh vjp pro]{"entity": "name"} nha
+    - có thể gọi anh là [ANh Nguyen]{"entity": "name"}
+    - em có thể kêu chị la [xuan mai]{"entity": "name"}
+    - chị tên là [suzzukli]{"entity": "name"}
+    - [KImatu nguyễn]{"entity": "name"} là tên của tui
+- intent: ask_function
+  examples: |
+    - Ban co chuc nang gi 
+    - Ban co kha nang gi 
+    - Ban giup toi nhu the nao 
+    - Nhiem vu cua ban la gi 
+    - Ban co the lam gi
+    - Hay cho toi thay ban huu ich nhu the nao
+    - ban lam duoc gi
+    - may lam gi
+    - may co cong dung khong
+    - ban co huu ich khong
+    - ban lam gi
+    - ban co ich khong
+    - ban giup do tui nhu the nao
+    - ban lam duoc gi tot
+    - ban lam sao huu ich
+    - bạn có thể làm gì
+    - chức năng của banj là gì
+    - ban có hữu dụng không
+    - bạn làm được gì
+    - nhiệm vụ của bạn là gì
+    - bạn giúp đỡ tui như thế nào
+    - mày làm gì
+    - mày có thể làm gì
+    - bạn có chức năng gì
+    - bạn có hữu ích không
+    - mày có công dung gì 
+
+- intent: thank
+  examples: |
+    - Thanks
+    - Thank you
+    - That's helpful
+    - Awesome, thanks
+    - Thanks for helping me
+    - Cam on nha
+    - Cam on ban
+    - ban tot bung qua
+    - ban sieu qua
+    - ban qua la vjp pro
+    - ban xin lam
+    - xin qua
+    - sieu 
+    - qua du
+    - cảm ơn bạn
+    - siêu 
+    - quá dữ
+    - cảm ơn bạn
+    - cảm ơn bạn nha
+    - bạn giỏi quá
+    - bạn vjp pro
+    - bạn thật tốt bụng
+    - xịn quá
+    - quá xịn lun
+    - bạn quá tuyệt
+    - tuyệt vời quá
+    - quá hay
+    - quá xịn
+
+- intent: ask_name
+  examples: |
+    - what's your name 
+    - ban ten gi
+    - ten cua ban la gi
+    - ban ten gi day
+    - ten ban
+    - ten ban la
+    - cho minh biet ten cua ban di
+    - ban ten gi a 
+    - ten that cua ban la gi
+    - ten cua ban
+    - your name
+    - ten gi a
+    - ten gi vay
+    - ten may la gi
+    - may ten gi
+    - bạn tên gì
+    - tên của bạn là 
+    - tên mày là gì
+    - hãy cho tao biết tên của mày
+    - tao muốn biết tên của mày
+    - tui cần biết tên của bạn
+    - tên bạn 
+    - bạn nói cho tui biết tên của bạn
+    - cho chị biết tên của em đi
+    - em tên gì
+    - cho anh biết tên của bé đi
+    - anh cần biết tên của bạn
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - ban co phai la bot khong
+    - ban la robot ha
+    - bot la ban ha
+    - bot
+    - bot la ai 
+    - ban co phai la botchat khong
+    - chatbot
+    - bạn là robot hả
+    - bạn có phải là bot không 
+    - bot là bạn hả 
+
+- intent: grossip
+  examples: |
+    - con cac
+    - thang chó
+    - lon 
+    - mất dạy
+    - ngu
+    - dcm
+    - duma
+    - douma 
+    - Đụ má
+    - Du ma
+    - Ngu lol
+    - Gà 
+    - Ngu ngốc
+    - ngu ngoc
+    - cho 
+    - con chos
+    - duj mas
+    - cak 
+    - danh nhau khong
+    - oanh lon de
+    - dap bay gio 
+    - lao ah 
+    - bo lao qua
+    - láo toét
+    - láo
+    - oánh lộn đi
+    - chửi thề không
+    - đánh nhau đi
+    - hut can kh
+    - an cut khong
+    - sao ban ngu qua vay
+    - NGU LOL
+    - CC 
+    - CON CHO 
+    - THANG CHO 
+    - AN THIT CHO KHONG 
+    - an thit cho khong
+    - leu leu
+    - liu liu
+    - dở quá
+    - cùi 
+    - dỏm
+    - gà
+    - làm như cc
+    - không hữu ích
+    - kh đáng sử dụng
+    - không đáng để dùng
+    - quá dỏm
+    - chất lượng bot kém
+    - chất lượng thấp
+    - đồ cùi bắp
+    - đồ gà
+    - đồ dỏm
+    - bạn làm mình buồn
+    - minh thất vọng về bạn
+    - thất vọng bạn quá
+    - mình buồn bạn
+
+
+- intent: unclear
+  examples: |
+   - fjkledsfjaf
+   - hjf
+   - 
+   - con meo an co huy thuoc
+   - choi do a
+   - ban co jsdklgjfsha
+   - ten la fjkosdhjsadok
+   - sạodsof
+   - ban hat khong
+   - jsdklfj
+   - tui muon bay 
+   - tui muon ngu
+   - khieu u
+   - mua
+   - hat ca ca the gioi
+   - đi ị 
+   - ka ka ai lop du pac pac
+   - GKSDJGHJ
+   - BAY LEN TREN BAU TROI
+   - hut phe can
+   - hu hu hu 
+   - hha haha haha
+# - intent: hello_world
+#   examples: |
+#     - world 
+#     - hello world
+#     - world on 

@@ -1,0 +1,96 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: happy path 1
+  steps:
+  - user: |
+      xin chao!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      ban ten gi
+    intent: ask_name
+  - action: utter_askname
+
+- story: happy path 2
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      chuc nang ban la gi
+    intent: ask_function
+  - action: utter_ask_function
+  - user: |
+      toi ten la Tung
+    intent: given_name
+  - action: utter_given_name
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: sad path 1
+  steps:
+  - user: |
+      hey
+    intent: greet
+  - action: utter_greet
+  - user: |
+      ban ten gi
+    intent: ask_name
+  - action: utter_ask_name
+  - user: |
+      Ten be la Hoa
+    intent: given_name
+  - action: utter_given_name
+  - user: |
+      cam on nhieu nha
+    intent: thank
+  - action: utter_thank
+
+- story: sad path 2
+  steps:
+  - user: |
+      chao buoi toi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      toi can tim den Truong Dai Hoc KHTN TPHCM
+    intent: find_path
+  - action: utter_find_path
+  - user: |
+      may la ai
+    intent: ask_name
+  - action: utter_ask_name
+
+- story: sad path 3
+  steps:
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      tao can den san truot patin truc vy
+    intent: find_path
+  - action: utter_find_path
+  - user: |
+      bye
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: say goodbye
+  steps:
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+  - user: |
+      may la robot ha
+    intent: bot_challenge
+  - action: utter_iamabot

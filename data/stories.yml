@@ -1,0 +1,205 @@
+version: "2.0"
+
+stories:
+
+- story: hoi_duong
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: given_name
+  - action: utter_given_name
+  - intent: find_path
+  - action: action_find_path
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: hoi_duong_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: ask_funtion
+  - action: utter_ask_function
+  - intent: find_path
+  - action: action_find_path
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: dua_ten_roi_hoi_duong
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: given_name
+  - action: utter_given_name
+  - intent: find_path
+  - action: action_find_path
+  - intent: dev
+  - action: utter_dev
+  - intent: gooodbye
+  - action: utter_goodbye
+
+- story: dua_ten_roi_hoi_duong2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: given_name
+  - action: utter_given_name
+  - intent: unclear
+  - action: utter_unclear
+  - intent: find_path
+  - action: action_find_path
+  - intent: gooodbye
+  - action: utter_goodbye
+
+- story: ask_for_dev
+  steps:
+  - intent: dev
+  - action: utter_dev
+
+- story: thank
+  steps:
+  - intent: thank
+  - action: utter_thank
+
+- story: tim_duong_truc_tiep
+  steps:
+  - intent: find_path
+  - action: action_find_path
+  - intent: ask_funtion
+  - action: utter_ask_function
+
+- story: nham_nham
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_path
+  - action: action_find_path
+  - intent: thank
+  - action: utter_thank
+  - intent: dev
+  - action: utter_dev
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: unclear
+  - action: utter_unclear
+  - intent: given_name
+  - action: utter_given_name
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: action_story
+  steps:
+    #- intent: hello_world
+  #- action: action_hello_world
+  - intent: find_path
+  - action: action_find_path
+  - intent: thank
+  - action: utter_thank
+
+- story: action_story_1
+  steps:
+  - intent: find_path
+  - action: action_find_path
+  - intent: thank
+  - action: utter_thank
+    #- intent: hello_world
+  #- action: action_hello_world
+
+- story: action_story_2
+  steps:
+  - intent: find_path
+  - action: action_find_path
+    
+  
+- story: nham_nham_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_path
+  - action: action_find_path
+  - intent: thank
+  - action: utter_thank
+    #- intent: hello_world
+  #- action: action_hello_world
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: given_name
+  - action: utter_given_name
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: function 
+  steps:
+    - intent: ask_function
+    - action: utter_ask_function
+    - intent: grossip
+    - action: utter_grossip
+    - intent: dev
+    - action: utter_dev
+    - intent: find_path
+    - action: action_find_path
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: function2
+  steps:
+    - intent: ask_function
+    - action: utter_ask_function
+    - intent: dev
+    - action: utter_dev
+
+- story: nham_nham_3
+  steps:
+    - intent: grossip
+    - action: utter_grossip
+    - intent: ask_name
+    - intent: utter_ask_name
+
+- story: nham_nham_4
+  steps:
+    - intent: grossip
+    - action: utter_grossip
+
+- story: action_story_8
+  steps:
+  - intent: dev
+  - action: utter_dev
+  - intent: find_path
+  - action: action_find_path
+  - intent: grossip
+  - action: utter_grossip
+  - intent: thank
+  - action: utter_thank
+
+  
+- story: khong_hieu 
+  steps:
+  - intent: find_path
+  - action: action_find_path
+  - intent: unclear
+  - action: utter_unclear
+  - intent: grossip
+  - action: utter_grossip
+  - intent: thank
+  - action: utter_thank
+
+- story: k_hieu2
+  steps:
+  - intent: unclear
+  - action: utter_unclear
+
+- story: action_story_1
+  steps:
+  - intent: find_path
+  - action: action_find_path
+  - intent: unclear
+  - action: utter_unclear
+  - intent: thank
+  - action: utter_thank
+  - intent: dev
+  - action: utter_dev
+
+  
